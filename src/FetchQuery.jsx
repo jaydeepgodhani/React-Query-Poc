@@ -1,5 +1,4 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import React, { useCallback } from "react";
 import { mockAPICall } from "./helper/mockAPICall";
 
 const FetchQuery = () => {
@@ -14,10 +13,10 @@ const FetchQuery = () => {
 
   console.log("data and error...", data, error);
 
-  const clicked = useCallback(() => {
+  const clicked = () => {
     queryClient.resetQueries(['repoData']);
     refetch();
-  }, []);
+  };
 
   return (
     <div>
